@@ -1372,9 +1372,7 @@ public class FlutterBluePlusPlugin implements
         ArrayList<String> permissions = new ArrayList<>();
 
         // Add ACCESS_FINE_LOCATION permission if needed for Bluetooth scanning
-        if (androidUsesFineLocation) {
-            permissions.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
+        permissions.add(Manifest.permission.ACCESS_FINE_LOCATION);
 
         // For Android 12 (API level 31) and higher
         if (Build.VERSION.SDK_INT >= 31) {
@@ -1386,11 +1384,6 @@ public class FlutterBluePlusPlugin implements
         if (Build.VERSION.SDK_INT == 29 || Build.VERSION.SDK_INT == 30) {
             permissions.add(Manifest.permission.BLUETOOTH);
             permissions.add(Manifest.permission.BLUETOOTH_ADMIN);
-        }
-
-        // For Android 9 (API level 28) and lower
-        if (Build.VERSION.SDK_INT <= 28) {
-            permissions.add(Manifest.permission.ACCESS_COARSE_LOCATION);
         }
 
         return permissions;
