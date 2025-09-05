@@ -30,3 +30,6 @@
 .packages
 build/
 .pub/
+
+# FVM Version Cache
+.fvm/
